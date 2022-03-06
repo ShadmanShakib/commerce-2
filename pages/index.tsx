@@ -1,9 +1,19 @@
 import type { NextPage } from "next";
-import Head from "next/head";
+import { useState, useEffect } from "react";
 import { Button } from "@mantine/core";
+import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import { getProducts } from "@services/Shopify";
 
 const Home: NextPage = () => {
+  const [products, setProducts] = useState<any>();
+
+  const handleGetProducts = () => {
+    const { data, error }: any = getProducts();
+    if (data) console.log(data.data);
+    console.log(error);
+  };
+
   return (
     <div className={styles.container}>
       <Head>
@@ -13,7 +23,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <Button>Hello World</Button>
+        <Button onClick={handleGetProducts}>Hello World</Button>
       </main>
     </div>
   );
