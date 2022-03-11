@@ -1,19 +1,13 @@
+/* eslint-disable @next/next/no-img-element */
 import type { NextPage } from "next";
 import { useState, useEffect } from "react";
-import { Button } from "@mantine/core";
+import { Button, Card, Box, Grid } from "@mantine/core";
+import _ from "underscore";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { getProducts } from "@services/Shopify";
 
-const Home: NextPage = () => {
-  const [products, setProducts] = useState<any>();
-
-  const handleGetProducts = () => {
-    const { data, error }: any = getProducts();
-    if (data) console.log(data.data);
-    console.log(error);
-  };
-
+const Home: NextPage = ({ data }: any) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -23,10 +17,32 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <Button onClick={handleGetProducts}>Hello World</Button>
+        <Grid columns={3}>
+          {data &&
+            _.map(data.products.edges, (product: any) => {
+              const { id, title, description, variants } = product.node;
+              const url = variants.edges[0].node.image.url;
+              return (
+                <Card key={id}>
+                  <h3>{title}</h3>
+                  <img alt={title} src={url} />
+                  <p>{description}</p>
+                  <Button>Add to cart</Button>
+                </Card>
+              );
+            })}
+        </Grid>
       </main>
     </div>
   );
 };
 
 export default Home;
+
+export async function getStaticProps() {
+  const { data }: any = await getProducts();
+
+  return {
+    props: { data },
+  };
+}
