@@ -1,17 +1,8 @@
-import { MantineProvider } from "@mantine/core";
-import { ApolloProvider } from "@apollo/client";
-import "../styles/globals.css";
-import Client from "../services/Apollo";
-import type { AppProps } from "next/app";
+import '../styles/globals.css'
+import type { AppProps } from 'next/app'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <ApolloProvider client={Client}>
-      <MantineProvider>
-        <Component {...pageProps} />
-      </MantineProvider>
-    </ApolloProvider>
-  );
+  return <Component {...pageProps} />
 }
 
-export default MyApp;
+export default MyApp
