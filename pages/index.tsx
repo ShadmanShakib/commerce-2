@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { Hero } from "components/home";
-
+import { Layout } from "components/common";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
@@ -13,9 +13,9 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="">
+      <Layout>
         <Hero />
-      </main>
+      </Layout>
     </div>
   );
 };
