@@ -21,7 +21,7 @@ function Hero() {
         <SwiperSlide className="w-full flex items-center">
           <img
             className="w-full h-[560px]"
-            src="https://cdn.shopify.com/s/files/1/0147/0962/0800/files/mb_slider3_690425e2-88a5-400e-baee-fc5ffb6ecdf6_750x.jpg?v=1630479141"
+            src="https://cdn.shopify.com/s/files/1/0147/0962/0800/files/1.jpg?v=1623384286"
             alt="slide 1"
           />
         </SwiperSlide>
