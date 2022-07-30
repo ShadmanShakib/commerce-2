@@ -1,6 +1,9 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
+import Image from "next/image";
 import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { heroData } from "data";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -19,7 +22,9 @@ function Hero() {
         onSwiper={(swiper) => console.log(swiper)}
       >
         <SwiperSlide className="w-full flex items-center">
-          <img
+          <Image
+            height={500}
+            width={600}
             className="w-full h-[560px]"
             src="https://cdn.shopify.com/s/files/1/0147/0962/0800/files/1.jpg?v=1623384286"
             alt="slide 1"
