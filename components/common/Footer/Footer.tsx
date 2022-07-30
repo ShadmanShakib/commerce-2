@@ -3,15 +3,7 @@ import Image from "next/image";
 function Footer() {
   return (
     <section className="flex flex-row items-center">
-      <div className="h-36 w-36">
-        <Image
-          layout="responsive"
-          height={360}
-          width={360}
-          src="https://cdn.shopify.com/s/files/1/0147/0962/0800/files/logofooter_360x.png?v=1628507265"
-          alt="footer_logo"
-        />
-      </div>
+      <div className="h-36 w-36"></div>
       <div>
         <h3>Good emails</h3>
         <p>Give your inbox some love with new products, tips, & more.</p>
