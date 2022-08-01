@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { Hero } from "components/home";
+import { Hero, Featured } from "components/home";
 import { Layout } from "components/common";
 import styles from "../styles/Home.module.css";
 
@@ -15,6 +15,7 @@ const Home: NextPage = () => {
 
       <Layout>
         <Hero />
+        <Featured />
       </Layout>
     </div>
   );
