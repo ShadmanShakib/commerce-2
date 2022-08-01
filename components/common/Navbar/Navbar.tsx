@@ -5,26 +5,28 @@ import Image from "next/image";
 function Navbar() {
   return (
     <header>
-      <Image
-        alt="logo"
-        width={180}
-        height={53}
-        src="https://cdn.shopify.com/s/files/1/0147/0962/0800/files/logo_180x.png?v=1623384115"
-      />
-      <SearchBox />
-      <nav className="flex">
-        <ul>Home</ul>
+      <div className="flex items-center justify-between">
+        <Image
+          alt="logo"
+          width={180}
+          height={53}
+          src="https://cdn.shopify.com/s/files/1/0147/0962/0800/files/logo_180x.png?v=1623384115"
+        />
+        <SearchBox />
+        <div className="flex">
+          <UserIcon />
+          <StarIcon />
+          <CartIcon />
+        </div>
+      </div>
+      <nav className="flex justify-center">
+        <ul className="mr-4">Home</ul>
         <ul>Shop</ul>
         <ul>Product</ul>
         <ul>Pages</ul>
         <ul>Blogs</ul>
         <ul>Features</ul>
       </nav>
-      <div className="flex">
-        <UserIcon />
-        <StarIcon />
-        <CartIcon />
-      </div>
     </header>
   );
 }
