@@ -1,11 +1,12 @@
 import React from "react";
-import FeaturedCard from "./FeaturedCard";
+
+import { ProductCard, H1 } from "components/ui";
 function Featured() {
   return (
     <section>
-      <h1 className="uppercase">Featured Products</h1>
+      <H1 text="Featured Products" />
       <div>
-        <FeaturedCard />
+        <ProductCard />
       </div>
     </section>
   );
