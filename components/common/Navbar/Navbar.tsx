@@ -15,7 +15,12 @@ function Navbar() {
         <SearchBox />
         <div className="flex">
           <UserIcon />
-          <StarIcon />
+          <div className="relative mr-4">
+            <div className="absolute bg-black rounded-full h-5 w-5 flex items-center justify-center -top-3 -right-2">
+              <p className="text-white">0</p>
+            </div>
+            <StarIcon />
+          </div>
           <CartIcon />
         </div>
       </div>
