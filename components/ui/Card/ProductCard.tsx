@@ -1,7 +1,13 @@
 import React from "react";
 import Image from "next/image";
 import { Button } from "components/ui";
+import { BiTransfer } from "react-icons/bi";
+import cn from "classnames";
+
 function ProductCard() {
+  const groupHover =
+    "invisible absolute -z-10 transform opacity-0 duration-300 group-hover:visible   group-hover:z-10  group-hover:opacity-100 ";
+
   return (
     <article>
       <div className="group relative h-[325px] w-[250px] ">
@@ -12,7 +18,14 @@ function ProductCard() {
           height={325}
           className="transform duration-300 group-hover:scale-110"
         />
-        <div className="invisible absolute -bottom-10 left-5 -z-10 transform opacity-0 duration-300 group-hover:visible  group-hover:bottom-4 group-hover:z-10  group-hover:opacity-100 ">
+        <div className={cn(groupHover, "-right-5 top-5 group-hover:right-5")}>
+          <Button>
+            <BiTransfer />
+          </Button>
+        </div>
+        <div
+          className={cn(groupHover, "-bottom-10 left-5 group-hover:bottom-4 ")}
+        >
           <Button className="w-52">
             <span className="text-sm">Add to cart</span>
           </Button>
