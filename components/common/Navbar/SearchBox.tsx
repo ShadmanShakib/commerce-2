@@ -3,12 +3,14 @@ import { SearchIcon } from "components/icons";
 
 function SearchBox() {
   return (
-    <div className="flex items-center  bg-gray-100 ">
+    <div className="flex items-center rounded-md  bg-gray-100 ">
       <input
-        className="h-8 outline-none bg-gray-100  px-3 rounded-sm"
+        className="h-10 outline-none bg-gray-100 w-80 px-3 py-2 rounded-sm"
         placeholder="Search products"
       />
-      <SearchIcon />
+      <button className="p-3 rounded-r-md">
+        <SearchIcon />
+      </button>
     </div>
   );
 }
