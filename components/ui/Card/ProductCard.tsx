@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { Button } from "components/ui";
-import { BiTransfer } from "react-icons/bi";
+import { BiTransfer,BiPlus } from "react-icons/bi";
 import cn from "classnames";
 
 function ProductCard() {
@@ -19,14 +19,19 @@ function ProductCard() {
           className="transform duration-300 group-hover:scale-110"
         />
         <div className={cn(groupHover, "-right-5 top-5 group-hover:right-5")}>
-          <Button>
+          <Button varient="rounded">
             <BiTransfer />
+          </Button>
+        </div>
+         <div className={cn(groupHover, "-right-5 top-20 group-hover:right-5")}>
+          <Button varient="rounded">
+            <BiPlus />
           </Button>
         </div>
         <div
           className={cn(groupHover, "-bottom-10 left-5 group-hover:bottom-4 ")}
         >
-          <Button className="w-52">
+          <Button varient="primary" className="w-52">
             <span className="text-sm">Add to cart</span>
           </Button>
         </div>

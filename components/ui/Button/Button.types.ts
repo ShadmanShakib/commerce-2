@@ -8,5 +8,6 @@ export interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
     | "warning"
     | "info"
     | "light"
-    | "dark";
+    | "dark"
+    | "rounded"
 }
