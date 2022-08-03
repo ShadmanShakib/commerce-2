@@ -1,22 +1,24 @@
 import React from "react";
-import { UserIcon, StarIcon, CartIcon } from "components/icons";
+import { UserIcon, StarIcon, CartIcon, Logo } from "components/icons";
 import SearchBox from "./SearchBox";
+
 import Image from "next/image";
 function Navbar() {
   return (
     <header>
       <div className="flex items-center justify-between">
-        <Image
+        <Logo />
+        {/* <Image
           alt="logo"
           width={180}
           height={53}
           src="https://cdn.shopify.com/s/files/1/0147/0962/0800/files/logo_180x.png?v=1623384115"
-        />
+        /> */}
         <SearchBox />
         <div className="flex">
           <UserIcon />
           <div className="relative mr-4">
-            <div className="absolute bg-black rounded-full h-5 w-5 flex items-center justify-center -top-3 -right-2">
+            <div className="absolute -top-3 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-black">
               <p className="text-white">0</p>
             </div>
             <StarIcon />

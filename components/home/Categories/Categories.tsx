@@ -9,8 +9,6 @@ function Categories() {
           <Image
             alt="product category"
             className="mr-6 transform duration-300 group-hover:scale-110"
-            height={500}
-            width={500}
             layout="fill"
             src="https://cdn.shopify.com/s/files/1/0147/0962/0800/files/4_900x.jpg?v=1623384855"
           />
