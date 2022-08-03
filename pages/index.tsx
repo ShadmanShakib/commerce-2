@@ -1,10 +1,12 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { Hero, Featured, Categories, Newsletter } from "components/home";
-import { Layout } from "components/common";
+import { Layout, Drawer } from "components/common";
 import styles from "../styles/Home.module.css";
+import React from "react";
 
 const Home: NextPage = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
   return (
     <div className={styles.container}>
       <Head>
@@ -14,6 +16,10 @@ const Home: NextPage = () => {
       </Head>
 
       <Layout>
+        <button onClick={() => setIsOpen(true)}>CLick</button>
+        <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
+          <div>Hello world</div>
+        </Drawer>
         <Hero />
         <Categories />
         <Featured />
