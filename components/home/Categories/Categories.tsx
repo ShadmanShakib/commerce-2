@@ -1,25 +1,45 @@
 import React from "react";
 import Image from "next/image";
-import { categoriesData } from "data/products";
+import { Button } from "components/ui";
 function Categories() {
   return (
     <section>
       <div className="grid gap-6 xl:grid-cols-2">
-        <Image
-          alt="product category"
-          height={500}
-          width={500}
-          src="https://cdn.shopify.com/s/files/1/0147/0962/0800/files/4_900x.jpg?v=1623384855"
-        />
+        <article className="group relative">
+          <Image
+            alt="product category"
+            className="mr-6 transform duration-300 group-hover:scale-110"
+            height={500}
+            width={500}
+            layout="fill"
+            src="https://cdn.shopify.com/s/files/1/0147/0962/0800/files/4_900x.jpg?v=1623384855"
+          />
+
+          <div className="absolute flex w-full justify-center xl:bottom-20 ">
+            <Button className="xl:h-12 xl:w-60" varient="primary">
+              Show now
+            </Button>
+          </div>
+        </article>
+
         <div>
           <div className="mb-6 grid gap-6 xl:grid-cols-2">
-            <Image
-              className="mr-6"
-              alt="product category"
-              height={400}
-              width={400}
-              src="https://cdn.shopify.com/s/files/1/0147/0962/0800/files/5_660x.png?v=1623385692"
-            />
+            <article className="group relative">
+              <Image
+                className="mr-6 transform duration-300 group-hover:scale-110"
+                alt="product category"
+                height={400}
+                width={400}
+                src="https://cdn.shopify.com/s/files/1/0147/0962/0800/files/5_660x.png?v=1623385692"
+              />
+              <div>
+                <div className="absolute bottom-10 flex w-full justify-center">
+                  <Button className="" varient="primary">
+                    Show now
+                  </Button>
+                </div>
+              </div>
+            </article>
             <Image
               alt="product category 4"
               height={400}
