@@ -1,6 +1,12 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { Hero, Featured, Categories, Newsletter } from "components/home";
+import {
+  Hero,
+  Featured,
+  Categories,
+  Newsletter,
+  Collection,
+} from "components/home";
 import { Layout, Drawer } from "components/common";
 import styles from "../styles/Home.module.css";
 import React from "react";
@@ -23,6 +29,7 @@ const Home: NextPage = () => {
         <Hero />
         <Categories />
         <Featured />
+        <Collection />
         <Newsletter />
       </Layout>
     </div>

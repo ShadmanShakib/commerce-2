@@ -19,7 +19,14 @@ const UiReducer = (state: InitialState, action: Action) => {
 
 export const UiProvider = ({ children }: any) => {
   const [state, dispatch] = useReducer(UiReducer, initState);
-  const value = useMemo(() => ({ state, dispatch }), [state, dispatch]);
+  const openDrawer = useCallback(() => {
+    dispatch({ type: "OPEN_DRAWER" });
+  }, [dispatch]);
+  const closeDrawer = useCallback(() => {
+    dispatch({ type: "CLOSE_DRAWER" });
+  }, [dispatch]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const value = useMemo(() => ({ ...state, openDrawer, closeDrawer }), [state]);
   return <UiContext.Provider value={value}>{children}</UiContext.Provider>;
 };
 
