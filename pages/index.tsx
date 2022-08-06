@@ -6,6 +6,7 @@ import {
   Categories,
   Newsletter,
   Collection,
+  Feature,
 } from "components/home";
 import { Layout, Drawer } from "components/common";
 import styles from "../styles/Home.module.css";
@@ -29,6 +30,7 @@ const Home: NextPage = () => {
         <Hero />
         <Categories />
         <Featured />
+        <Feature />
         <Collection />
         <Newsletter />
       </Layout>
