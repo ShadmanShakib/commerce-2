@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import { data } from "./data";
 import { map } from "underscore";
 import Card from "./Card";

@@ -8,31 +8,34 @@ function Navbar() {
     <header>
       <div className="flex items-center justify-between">
         <Logo />
-        {/* <Image
-          alt="logo"
-          width={180}
-          height={53}
-          src="https://cdn.shopify.com/s/files/1/0147/0962/0800/files/logo_180x.png?v=1623384115"
-        /> */}
+
         <SearchBox />
         <div className="flex">
-          <UserIcon />
-          <div className="relative mr-4">
+          <div className="mr-8">
+            <UserIcon />
+          </div>
+          <div className="relative mr-8">
             <div className="absolute -top-3 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-black">
               <p className="text-white">0</p>
             </div>
             <StarIcon />
           </div>
-          <CartIcon />
+          <div className="relative mr-8">
+            <div className="absolute -top-3 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-black">
+              <p className="text-white">0</p>
+            </div>
+
+            <CartIcon />
+          </div>
         </div>
       </div>
-      <nav className="flex justify-center">
-        <ul className="mr-4">Home</ul>
-        <ul>Shop</ul>
-        <ul>Product</ul>
-        <ul>Pages</ul>
-        <ul>Blogs</ul>
-        <ul>Features</ul>
+      <nav className="flex justify-center py-2">
+        <ul className="mr-8 font-semibold">Home</ul>
+        <ul className="mr-8 font-semibold">Shop</ul>
+        <ul className="mr-8 font-semibold">Product</ul>
+        <ul className="mr-8 font-semibold">Pages</ul>
+        <ul className="mr-8 font-semibold">Blogs</ul>
+        <ul className="font-semibold">Features</ul>
       </nav>
     </header>
   );
