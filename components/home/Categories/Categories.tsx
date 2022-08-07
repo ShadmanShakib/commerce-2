@@ -1,9 +1,11 @@
 import React from "react";
 import Image from "next/image";
-import { Button } from "components/ui";
+import { Button, H1 } from "components/ui";
+
 function Categories() {
   return (
-    <section>
+    <section className="mx-auto max-w-screen-xl py-5">
+      <H1 text="Shop by Categories" />
       <div className="grid gap-6 xl:grid-cols-2">
         <article className="group relative">
           <Image
