@@ -1,14 +1,12 @@
 import React from "react";
 import Image from "next/image";
-export default function CollectionCard() {
+interface CardProps {
+  src: string;
+}
+export default function CollectionCard(props: CardProps) {
   return (
     <article>
-      <Image
-        height={400}
-        width={600}
-        alt="Collection 1"
-        src="https://cdn.shopify.com/s/files/1/0147/0962/0800/files/8_1080x.jpg?v=1623387240"
-      />
+      <Image height={400} width={650} alt="Collection 1" src={props.src} />
       <h2 className="text-lg font-semibold">
         Consume Pottery Among The Rainbow Mug
       </h2>

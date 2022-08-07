@@ -1,22 +1,29 @@
 import React from "react";
 import Image from "next/image";
+import { Logo } from "components/icons";
 function Footer() {
   return (
-    <section className="flex flex-row items-center">
-      <div className="h-36 w-36"></div>
-      <div>
+    <section className="mx-auto grid max-w-screen-xl xl:grid-cols-5">
+      <div className="col-span-2 ">
+        <Logo />
+        <p>
+          Super class, cute, comfortable. You can wear them with just about
+          anything.
+        </p>
+      </div>
+      <div className="flex flex-col">
         <h3>Good emails</h3>
         <p>Give your inbox some love with new products, tips, & more.</p>
         <input type="text" />
       </div>
-      <div>
+      <div className="flex flex-col">
         <h1>Information</h1>
         <a>My account</a>
         <a>Cart</a>
         <a>Whitelist</a>
         <a href="">Compare Products</a>
       </div>
-      <div>
+      <div className="flex flex-col">
         <h1>Contact</h1>
         <a>About us</a>
         <a>Contact us</a>
