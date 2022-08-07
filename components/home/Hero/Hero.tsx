@@ -11,8 +11,9 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 function Hero() {
   return (
-    <div>
+    <div className=" w-full">
       <Swiper
+        className="relative w-full"
         navigation
         modules={[Navigation, Pagination]}
         pagination={{
@@ -24,18 +25,20 @@ function Hero() {
         onSwiper={(swiper) => console.log(swiper)}
       >
         {map(heroData, (item) => (
-          <article className="flex" key={item.id}>
+          <article className="flex w-full" key={item.id}>
             <SwiperSlide className="relative">
               <Image
+                layout="responsive"
+                width={1500}
                 height={600}
-                width={1400}
                 className=""
                 src={item.src}
                 alt={item.title}
               />
-              <div className="absolute bottom-20 left-20 mr-4 mb-4">
-                <h1>{item.title}</h1>
-                <Button varient="outline" className=" ">
+              <div className="absolute left-32 top-1/3 mr-4 mb-4">
+                <h1 className="mb-10 text-7xl font-semibold">{item.title}</h1>
+                <p>From millions of things designed and sold by artists.</p>
+                <Button varient="outline" className="mt-8 ">
                   <span>Shop now</span>
                 </Button>
               </div>
