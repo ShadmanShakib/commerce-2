@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import { Button } from "components/ui";
-import { BiTransfer,BiPlus } from "react-icons/bi";
-import {BsEye} from "react-icons/bs"
+import { BiTransfer, BiPlus } from "react-icons/bi";
+import { BsEye } from "react-icons/bs";
 import cn from "classnames";
 
 function ProductCard() {
@@ -24,17 +24,15 @@ function ProductCard() {
             <BiTransfer />
           </Button>
         </div>
-         <div className={cn(groupHover, "-right-5 top-16 group-hover:right-5")}>
+        <div className={cn(groupHover, "-right-5 top-16 group-hover:right-5")}>
           <Button varient="rounded">
             <BiPlus />
           </Button>
         </div>
-          <div className={cn(groupHover, "-right-5 top-28  group-hover:right-5")}>
-          <Button className="relative group" varient="rounded">
+        <div className={cn(groupHover, "-right-5 top-28  group-hover:right-5")}>
+          <Button className="group relative" varient="rounded">
             <BsEye />
-          
           </Button>
-           
         </div>
         <div
           className={cn(groupHover, "-bottom-10 left-5 group-hover:bottom-4 ")}
@@ -44,7 +42,10 @@ function ProductCard() {
           </Button>
         </div>
       </div>
-      <h1>Animation Greeting Card</h1>
+      <div className=" mt-4">
+        <h1 className="mb-2 font-semibold">Animation Greeting Card</h1>
+        <p>$64.50</p>
+      </div>
     </article>
   );
 }
