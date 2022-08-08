@@ -1,9 +1,8 @@
 import React from "react";
-import Image from "next/image";
 import { Logo } from "components/icons";
 function Footer() {
   return (
-    <section className="mx-auto grid max-w-screen-xl xl:grid-cols-5">
+    <section className="mx-auto grid max-w-screen-xl py-6 xl:grid-cols-5">
       <div className="col-span-2 ">
         <Logo />
         <p>
