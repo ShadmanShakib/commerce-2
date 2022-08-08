@@ -22,18 +22,16 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Layout>
-        <button onClick={() => setIsOpen(true)}>CLick</button>
-        <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
-          <div>Hello world</div>
-        </Drawer>
-        <Hero />
-        <Categories />
-        <Featured />
-        <Feature />
-        <Collection />
-        <Newsletter />
-      </Layout>
+      <button onClick={() => setIsOpen(true)}>CLick</button>
+      <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
+        <div>Hello world</div>
+      </Drawer>
+      <Hero />
+      <Categories />
+      <Featured />
+      <Feature />
+      <Collection />
+      <Newsletter />
     </div>
   );
 };

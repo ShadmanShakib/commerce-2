@@ -1,5 +1,5 @@
 import React from "react";
-
+import { ProductMedia } from "components/product";
 function product() {
   return (
     <main>
