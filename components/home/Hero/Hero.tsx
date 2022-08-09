@@ -21,7 +21,6 @@ function Hero() {
         }}
         spaceBetween={50}
         slidesPerView={1}
-        onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
       >
         {map(heroData, (item) => (
@@ -31,7 +30,6 @@ function Hero() {
                 layout="responsive"
                 width={1500}
                 height={600}
-                className=""
                 src={item.src}
                 alt={item.title}
               />
