@@ -3,7 +3,7 @@ import { Button } from "components/ui";
 import { BiShare } from "react-icons/bi";
 export default function ProdInfo() {
   return (
-    <article className="w-1/2 px-8">
+    <article className="w-1/2 px-8 flex flex-col items-center">
       <h1 className="mb-5 text-2xl">White Ceramic Flower Mug</h1>
       <div className="flex items-center">
         <h1 className="mr-4 text-xl">$22.99</h1>
