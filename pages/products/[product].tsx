@@ -1,5 +1,5 @@
 import React from "react";
-import { ProductMedia, ProdInfo, Recommendation } from "components/product";
+import { ProductMedia, ProdInfo, Recommendation, ProdDetailTab } from "components/product";
 function product() {
   return (
     <main className="">
@@ -8,6 +8,7 @@ function product() {
         <ProductMedia />
         <ProdInfo />
       </section>
+      <ProdDetailTab />
       <Recommendation />
     </main>
   );
