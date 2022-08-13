@@ -44,7 +44,13 @@ export const UiProvider = ({ children }: any) => {
   }, [dispatch]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const value = useMemo(
-    () => ({ ...state, openDrawer, closeDrawer, setProdDescriptionTab }),
+    () => ({
+      ...state,
+      openDrawer,
+      closeDrawer,
+      setProdDescriptionTab,
+      toggleWritingReview,
+    }),
     [state]
   );
   return <UiContext.Provider value={value}>{children}</UiContext.Provider>;

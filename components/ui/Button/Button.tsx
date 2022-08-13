@@ -2,7 +2,7 @@ import React from "react";
 import { ButtonProps } from "./Button.types";
 import cn from "classnames";
 function Button(props: ButtonProps) {
-  const className = cn(
+  const btnClass = cn(
     "  font-semibold  hover:scale-105 transform   transform duration-300",
     props.className,
     {
@@ -15,7 +15,11 @@ function Button(props: ButtonProps) {
       "bg-black text-white": props.varient === "dark",
     }
   );
-  return <button className={className}>{props.children}</button>;
+  return (
+    <button onClick={props.onClick} className={btnClass}>
+      {props.children}
+    </button>
+  );
 }
 
 export default Button;
