@@ -2,7 +2,8 @@ import React from "react";
 import { useUI } from "utils/hooks";
 import cn from "classnames";
 import ProdDescription from "./ProdDescription";
-
+import ProdReturn from "./ProdReturn";
+import ProdReviews from "./ProdReviews";
 function ProdDetailTab() {
   const { setProdDescriptionTab, prodDescriptionTab } = useUI();
   const btnClass = "py-3 px-5 ";
@@ -16,7 +17,8 @@ function ProdDetailTab() {
         <button
           onClick={() => handleClick("description")}
           className={cn(btnClass, {
-            "border-b-2 border-black": prodDescriptionTab === "description",
+            "border-b-2 border-black font-semibold":
+              prodDescriptionTab === "description",
           })}
         >
           Product description
@@ -24,7 +26,8 @@ function ProdDetailTab() {
         <button
           onClick={() => handleClick("returns")}
           className={cn(btnClass, {
-            "border-b-2 border-black": prodDescriptionTab === "returns",
+            "border-b-2 border-black font-semibold":
+              prodDescriptionTab === "returns",
           })}
         >
           Shipping & Return
@@ -32,7 +35,8 @@ function ProdDetailTab() {
         <button
           onClick={() => handleClick("reviews")}
           className={cn(btnClass, {
-            "border-b-2 border-black": prodDescriptionTab === "reviews",
+            "border-b-2 border-black font-semibold":
+              prodDescriptionTab === "reviews",
           })}
         >
           Product reviews
@@ -44,7 +48,11 @@ function ProdDetailTab() {
           title="product1"
           src="https://cdn.shopify.com/s/files/1/0147/0962/0800/products/13_720x.png?v=1624266814"
         />
-      ) : null}
+      ) : prodDescriptionTab === "returns" ? (
+        <ProdReturn />
+      ) : (
+        <ProdReviews />
+      )}
     </section>
   );
 }
