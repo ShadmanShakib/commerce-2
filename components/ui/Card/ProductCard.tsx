@@ -4,8 +4,9 @@ import { Button } from "components/ui";
 import { BiTransfer, BiPlus } from "react-icons/bi";
 import { BsEye } from "react-icons/bs";
 import cn from "classnames";
-
-function ProductCard() {
+import { CardProps } from "./types";
+function ProductCard(props: CardProps) {
+  const { title, description, image } = props;
   const groupHover =
     "invisible absolute -z-10 transform opacity-0 duration-300 group-hover:visible   group-hover:z-10  group-hover:opacity-100 ";
 
@@ -43,7 +44,7 @@ function ProductCard() {
         </div>
       </div>
       <div className=" mt-4">
-        <h1 className="mb-2 font-semibold">Animation Greeting Card</h1>
+        <h1 className="mb-2 font-semibold">{title}</h1>
         <p>$64.50</p>
       </div>
     </article>

@@ -6,15 +6,16 @@ import { useUI } from "utils/hooks";
 export default function ProdReviews() {
   const { toggleWritingReview, isWritingReview } = useUI();
   return (
-    <article>
+    <article className="py-10">
       <h1 className="text-xl font-semibold">Customer Reviews</h1>
       <div className="flex items-center justify-between">
-        <div className="flex">
+        <div className="flex items-center">
           <BiStar size={20} />
-          <BiStar />
-          <BiStar />
-          <BiStar />
-          <BiStar />
+          <BiStar size={20} />
+          <BiStar size={20} />
+          <BiStar size={20} />
+          <BiStar size={20} />
+          <p className="ml-6">based on 2 reviews</p>
         </div>
         <Button onClick={toggleWritingReview} varient="outline">
           Write a Review
