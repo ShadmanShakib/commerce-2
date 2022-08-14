@@ -6,13 +6,15 @@ import {
   ProdDetailTab,
 } from "components/product";
 import Stickyatc from "components/common/Stickyatc";
+import { Breadcrumb } from "components/ui";
 function product() {
   return (
     <main className="">
-      <section className="mx-auto flex max-w-screen-xl">
+      <Breadcrumb />
+      <div className="mx-auto flex max-w-screen-xl">
         <ProductMedia />
         <ProdInfo />
-      </section>
+      </div>
       <ProdDetailTab />
       <Recommendation />
       <Stickyatc />
