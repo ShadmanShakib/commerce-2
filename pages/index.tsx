@@ -8,8 +8,7 @@ import {
   Collection,
   Feature,
 } from "components/home";
-import { Layout, Drawer } from "components/common";
-import styles from "../styles/Home.module.css";
+
 import React from "react";
 
 const Home: NextPage = () => {
@@ -22,10 +21,6 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <button onClick={() => setIsOpen(true)}>CLick</button>
-      <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
-        <div>Hello world</div>
-      </Drawer>
       <Hero />
       <Categories />
       <Featured />
