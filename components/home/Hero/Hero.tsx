@@ -25,7 +25,7 @@ function Hero() {
       >
         {map(heroData, (item) => (
           <article className="flex w-full" key={item.id}>
-            <SwiperSlide className="relative">
+            <SwiperSlide key={item.id} className="relative">
               <Image
                 layout="responsive"
                 width={1500}
