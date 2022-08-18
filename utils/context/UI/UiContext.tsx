@@ -11,9 +11,9 @@ const UiContext = createContext<InitialState | any>(initState);
 const UiReducer = (state: InitialState, action: Action) => {
   switch (action.type) {
     case "OPEN_DRAWER":
-      return { ...state, drawerOpen: true };
+      return { ...state, isDrawerOpen: true };
     case "CLOSE_DRAWER":
-      return { ...state, drawerOpen: false };
+      return { ...state, isDrawerOpen: false };
     case "SET_PROD_DESCRIPTION_TAB":
       return { ...state, prodDescriptionTab: action.payload };
     case "TOGGLE_WRITING_REVIEW":
