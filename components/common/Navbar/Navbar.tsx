@@ -1,9 +1,9 @@
 import React from "react";
 import { UserIcon, StarIcon, CartIcon, Logo } from "components/icons";
 import SearchBox from "./SearchBox";
-
-import Image from "next/image";
+import { useUI } from "utils/hooks";
 function Navbar() {
+  const { toggleDrawer } = useUI();
   return (
     <header>
       <div className="flex items-center justify-between">
@@ -24,8 +24,9 @@ function Navbar() {
             <div className="absolute -top-3 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-black">
               <p className="text-white">0</p>
             </div>
-
-            <CartIcon />
+            <button onClick={toggleDrawer}>
+              <CartIcon />
+            </button>
           </div>
         </div>
       </div>
