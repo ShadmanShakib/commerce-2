@@ -13,11 +13,12 @@ function Featured(props: FeaturedProps) {
       <div className="grid grid-cols-5 gap-x-6">
         {map(products, (product) => {
           const { title, description, images } = product.attributes;
+          const { attributes, url } = images.data[0];
           return (
             <ProductCard
               key={product.id}
-              title={product.attributes.title}
-              image={images.data[0].attributes.name}
+              title={title}
+              image={attributes.name}
             />
           );
         })}
