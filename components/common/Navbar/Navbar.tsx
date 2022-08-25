@@ -2,6 +2,7 @@ import React from "react";
 import { UserIcon, StarIcon, CartIcon, Logo } from "components/icons";
 import SearchBox from "./SearchBox";
 import { useUI } from "utils/hooks";
+import { Button } from "@mantine/core";
 function Navbar() {
   const { openDrawer, isDrawerOpen } = useUI();
   return (
@@ -20,7 +21,10 @@ function Navbar() {
             </div>
             <StarIcon />
           </div>
-          <button onClick={() => openDrawer()} className="relative mr-8">
+          <button
+            onClick={() => openDrawer()}
+            className="relative mr-8 border-0 bg-white"
+          >
             <div className="absolute -top-3 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-black">
               <p className="text-white">0</p>
             </div>

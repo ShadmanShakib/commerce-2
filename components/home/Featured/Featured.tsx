@@ -1,16 +1,26 @@
 import React from "react";
-
+import { map } from "underscore";
 import { ProductCard, H1 } from "components/ui";
-function Featured() {
+interface FeaturedProps {
+  products: any;
+}
+function Featured(props: FeaturedProps) {
+  const { products } = props;
+
   return (
     <section className="mx-auto max-w-screen-xl py-5">
       <H1 text="Featured Products" />
       <div className="grid grid-cols-5 gap-x-6">
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+        {map(products, (product) => {
+          const { title, description, images } = product.attributes;
+          return (
+            <ProductCard
+              key={product.id}
+              title={product.attributes.title}
+              image={images.data[0].attributes.name}
+            />
+          );
+        })}
       </div>
     </section>
   );

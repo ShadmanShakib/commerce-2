@@ -5,11 +5,7 @@ export default async function getProducts() {
     url: `${process.env.NEXT_PUBLIC_BASE_URL}/products?populate=images`,
   };
 
-  axios(config)
-    .then((response) => {
-      console.log(response.data.data);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+  const data = await axios.get(config.url);
+  const products = data.data;
+  return products;
 }

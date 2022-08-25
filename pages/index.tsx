@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import axios from "axios";
 import {
   Hero,
   Featured,
@@ -8,11 +9,11 @@ import {
   Collection,
   Feature,
 } from "components/home";
-
+//services
+import { getProducts } from "services";
 import React from "react";
 
-const Home: NextPage = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+const Home: NextPage = ({ products }: any) => {
   return (
     <div className="">
       <Head>
@@ -23,7 +24,7 @@ const Home: NextPage = () => {
 
       <Hero />
       <Categories />
-      <Featured />
+      <Featured products={products.data} />
       <Feature />
       <Collection />
       <Newsletter />
@@ -32,3 +33,12 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export async function getStaticProps() {
+  // Fetch data from external API
+
+  const products = await getProducts();
+
+  // Pass data to the page via props
+  return { props: { products } };
+}

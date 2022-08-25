@@ -1,6 +1,5 @@
 import React from "react";
 import { SearchIcon } from "components/icons";
-
 function SearchBox() {
   return (
     <div className="flex w-2/4 items-center rounded-md  bg-gray-100 ">
