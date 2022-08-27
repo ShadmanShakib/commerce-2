@@ -5,6 +5,7 @@ import { BiTransfer, BiPlus } from "react-icons/bi";
 import { BsEye } from "react-icons/bs";
 import cn from "classnames";
 import { CardProps } from "./types";
+import Link from "next/link";
 function ProductCard(props: CardProps) {
   const { title, description, image } = props;
   const groupHover =
@@ -13,13 +14,17 @@ function ProductCard(props: CardProps) {
   return (
     <article>
       <div className="group relative h-[325px] w-[250px] ">
-        <Image
-          src={image}
-          alt="product 1"
-          width={250}
-          height={325}
-          className="transform duration-300 group-hover:scale-110"
-        />
+        <Link href={`/products/${title}`}>
+          <a href="">
+            <Image
+              src={image}
+              alt="product 1"
+              width={250}
+              height={325}
+              className="transform duration-300 group-hover:scale-110"
+            />
+          </a>
+        </Link>
         <div className={cn(groupHover, "-right-5 top-4 group-hover:right-5")}>
           <Button varient="rounded">
             <BiTransfer />
