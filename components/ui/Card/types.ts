@@ -3,4 +3,5 @@ export interface CardProps {
   description?: string;
   image: string;
   link?: string;
+  id: string;
 }

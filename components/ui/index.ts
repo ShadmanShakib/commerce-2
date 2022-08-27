@@ -5,4 +5,4 @@ export { default as Input } from "./Input";
 export { default as QuantityInput } from "./QuantityInput";
 export { default as Breadcrumb } from "./Breadcrumb";
 export { default as CartView } from "./CartView";
-export { default as Modal } from "./Modal";
+export { default as ModalView } from "./Modal";

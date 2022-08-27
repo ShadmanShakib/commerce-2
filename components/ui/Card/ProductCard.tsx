@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { Button } from "components/ui";
+import { Button, ModalView } from "components/ui";
 import { BiTransfer, BiPlus } from "react-icons/bi";
 import { BsEye } from "react-icons/bs";
 import cn from "classnames";
@@ -8,8 +8,9 @@ import { CardProps } from "./types";
 import Link from "next/link";
 import { useUI } from "utils/hooks";
 function ProductCard(props: CardProps) {
-  const { title, description, image } = props;
+  const { title, description, image, id } = props;
   const { openProductModal } = useUI();
+
   const groupHover =
     "invisible absolute -z-10 transform opacity-0 duration-300 group-hover:visible   group-hover:z-10  group-hover:opacity-100 ";
 

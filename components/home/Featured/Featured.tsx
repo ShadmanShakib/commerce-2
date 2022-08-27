@@ -16,6 +16,7 @@ function Featured(props: FeaturedProps) {
           const { attributes, url } = images.data[0];
           return (
             <ProductCard
+              id={product.id}
               key={product.id}
               title={title}
               image={attributes.name}
