@@ -3,6 +3,7 @@ export interface InitialState {
   isDrawerOpen: boolean;
   isWritingReview: boolean;
   prodDescriptionTab: "description" | "reviews" | "returns";
+  isModal: boolean;
 }
 
 export type Action =
@@ -15,4 +16,7 @@ export type Action =
     }
   | {
       type: "TOGGLE_WRITING_REVIEW";
+    }
+  | {
+      type: "OPEN_MODAL" | "CLOSE_MODAL";
     };

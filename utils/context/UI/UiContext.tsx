@@ -5,6 +5,7 @@ const initState: InitialState = {
   isDrawerOpen: false,
   isWritingReview: false,
   prodDescriptionTab: "description",
+  isModal: false,
 };
 const UiContext = createContext<InitialState | any>(initState);
 
@@ -18,6 +19,11 @@ const UiReducer = (state: InitialState, action: Action) => {
       return { ...state, prodDescriptionTab: action.payload };
     case "TOGGLE_WRITING_REVIEW":
       return { ...state, isWritingReview: !state.isWritingReview };
+    //modal
+    case "OPEN_MODAL":
+      return { ...state, isModal: true };
+    case "CLOSE_MODAL":
+      return { ...state, isModal: false };
     default:
       return state;
   }
@@ -42,6 +48,13 @@ export const UiProvider = ({ children }: any) => {
   const toggleWritingReview = useCallback(() => {
     dispatch({ type: "TOGGLE_WRITING_REVIEW" });
   }, [dispatch]);
+  //open product quickview modal
+  const openProductModal = useCallback(() => {
+    dispatch({ type: "OPEN_MODAL" });
+  }, [dispatch]);
+  const closeModal = useCallback(() => {
+    dispatch({ type: "CLOSE_MODAL" });
+  }, [dispatch]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const value = useMemo(
     () => ({
@@ -50,6 +63,8 @@ export const UiProvider = ({ children }: any) => {
       closeDrawer,
       setProdDescriptionTab,
       toggleWritingReview,
+      openProductModal,
+      closeModal,
     }),
     [state]
   );

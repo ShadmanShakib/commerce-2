@@ -6,8 +6,10 @@ import { BsEye } from "react-icons/bs";
 import cn from "classnames";
 import { CardProps } from "./types";
 import Link from "next/link";
+import { useUI } from "utils/hooks";
 function ProductCard(props: CardProps) {
   const { title, description, image } = props;
+  const { openProductModal } = useUI();
   const groupHover =
     "invisible absolute -z-10 transform opacity-0 duration-300 group-hover:visible   group-hover:z-10  group-hover:opacity-100 ";
 
@@ -36,7 +38,11 @@ function ProductCard(props: CardProps) {
           </Button>
         </div>
         <div className={cn(groupHover, "-right-5 top-28  group-hover:right-5")}>
-          <Button className="group relative" varient="rounded">
+          <Button
+            onClick={openProductModal}
+            className="group relative"
+            varient="rounded"
+          >
             <BsEye />
           </Button>
         </div>
