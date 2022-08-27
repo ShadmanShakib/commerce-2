@@ -2,9 +2,10 @@ import React from "react";
 import { UserIcon, StarIcon, CartIcon, Logo } from "components/icons";
 import SearchBox from "./SearchBox";
 import { useUI } from "utils/hooks";
-import { Button } from "@mantine/core";
+import { map } from "underscore";
 function Navbar() {
-  const { openDrawer, isDrawerOpen } = useUI();
+  const { openDrawer } = useUI();
+  const menuItems = ["Home", "Shop", "Product", "Pages", "Blogs", "Features"];
   return (
     <header>
       <div className="flex items-center justify-between">
@@ -33,12 +34,13 @@ function Navbar() {
         </div>
       </div>
       <nav className="flex justify-center py-2">
-        <ul className="mr-8 font-semibold">Home</ul>
-        <ul className="mr-8 font-semibold">Shop</ul>
-        <ul className="mr-8 font-semibold">Product</ul>
-        <ul className="mr-8 font-semibold">Pages</ul>
-        <ul className="mr-8 font-semibold">Blogs</ul>
-        <ul className="font-semibold">Features</ul>
+        {map(menuItems, (item, idx) => {
+          return (
+            <a className="cursor-pointer px-3" key={idx}>
+              {item}
+            </a>
+          );
+        })}
       </nav>
     </header>
   );
