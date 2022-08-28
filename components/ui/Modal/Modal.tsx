@@ -3,6 +3,7 @@ import { map } from "underscore";
 import { Modal, ModalProps } from "@mantine/core";
 import { Carousel } from "@mantine/carousel";
 import { useUI } from "utils/hooks";
+import { Button } from "components/ui";
 import { Loader } from "@mantine/core";
 import { useQuery } from "@tanstack/react-query";
 import { getProduct } from "services/product";
@@ -21,8 +22,18 @@ export default function ModalView({ id }: { id: string }) {
 
   if (isLoading)
     return (
-      <Modal opened={isModal} onClose={closeModal}>
-        <Loader />
+      <Modal
+        overflow="inside"
+        centered
+        withCloseButton={false}
+        padding={0}
+        size={800}
+        opened={isModal}
+        onClose={closeModal}
+      >
+        <div className="flex items-center justify-center">
+          <Loader />
+        </div>
       </Modal>
     );
   if (data) {
@@ -63,8 +74,11 @@ export default function ModalView({ id }: { id: string }) {
           </Carousel>
 
           <div className="w-full">
-            <h1>{title}</h1>
+            <h1 className="text-lg">{title}</h1>
             <p>{price}</p>
+            <Button varient="dark">
+              <span>Add to cart</span>
+            </Button>
           </div>
         </div>
       </Modal>
