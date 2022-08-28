@@ -7,6 +7,7 @@ import { Loader } from "@mantine/core";
 import { useQuery } from "@tanstack/react-query";
 import { getProduct } from "services/product";
 import Image from "next/image";
+import "swiper/css";
 export default function ModalView({ id }: { id: string }) {
   const { isModal, closeModal, productId } = useUI();
 
@@ -25,21 +26,35 @@ export default function ModalView({ id }: { id: string }) {
       </Modal>
     );
   if (data) {
-    const { title, images, discription } = data.data.attributes;
+    const { title, images, discription, price } = data.data.attributes;
 
     return (
-      <Modal className="" opened={isModal} onClose={closeModal}>
-        <div className="relative flex">
-          <Carousel slideSize={"100%"} slideGap={0}>
+      <Modal
+        overflow="inside"
+        centered
+        withCloseButton={false}
+        padding={0}
+        size={800}
+        className=""
+        opened={isModal}
+        onClose={closeModal}
+      >
+        <div className=" flex ">
+          <Carousel
+            slideSize={"100%"}
+            mx="auto"
+            align="start"
+            dragFree
+            slideGap={0}
+          >
             {map(images.data, (image) => {
-              console.log(image);
               return (
-                <Carousel.Slide key={image.id}>
+                <Carousel.Slide className="relative" key={image.id}>
                   <Image
                     className=""
                     src={image.attributes.url}
-                    height={500}
-                    width={500}
+                    height={400}
+                    width={400}
                     alt={image.attributes.alternativeText}
                   />
                 </Carousel.Slide>
@@ -47,9 +62,9 @@ export default function ModalView({ id }: { id: string }) {
             })}
           </Carousel>
 
-          <div className="w-1/2">
+          <div className="w-full">
             <h1>{title}</h1>
-            <p>{discription}</p>
+            <p>{price}</p>
           </div>
         </div>
       </Modal>
