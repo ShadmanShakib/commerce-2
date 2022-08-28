@@ -8,12 +8,15 @@ import { useQuery } from "@tanstack/react-query";
 import { getProduct } from "services/product";
 import Image from "next/image";
 export default function ModalView({ id }: { id: string }) {
-  const { isModal, closeModal } = useUI();
+  const { isModal, closeModal, productId } = useUI();
 
-  const { isLoading, error, data } = useQuery(["product"], async () => {
-    const data = await getProduct(id);
-    return data;
-  });
+  const { isLoading, error, data } = useQuery(
+    ["product", productId],
+    async () => {
+      const data = await getProduct(productId);
+      return data;
+    }
+  );
 
   if (isLoading)
     return (
@@ -23,20 +26,21 @@ export default function ModalView({ id }: { id: string }) {
     );
   if (data) {
     const { title, images, discription } = data.data.attributes;
-    const { name, alternativeText } = images.data[0].attributes;
+
     return (
       <Modal className="" opened={isModal} onClose={closeModal}>
         <div className="relative flex">
           <Carousel slideSize={"100%"} slideGap={0}>
             {map(images.data, (image) => {
+              console.log(image);
               return (
                 <Carousel.Slide key={image.id}>
                   <Image
                     className=""
-                    src={image.attributes.name}
+                    src={image.attributes.url}
                     height={500}
                     width={500}
-                    alt={alternativeText}
+                    alt={image.attributes.alternativeText}
                   />
                 </Carousel.Slide>
               );

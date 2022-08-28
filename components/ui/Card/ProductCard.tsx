@@ -40,7 +40,7 @@ function ProductCard(props: CardProps) {
         </div>
         <div className={cn(groupHover, "-right-5 top-28  group-hover:right-5")}>
           <Button
-            onClick={openProductModal}
+            onClick={() => openProductModal(id)}
             className="group relative"
             varient="rounded"
           >

@@ -6,6 +6,7 @@ const initState: InitialState = {
   isWritingReview: false,
   prodDescriptionTab: "description",
   isModal: false,
+  productId: null,
 };
 const UiContext = createContext<InitialState | any>(initState);
 
@@ -21,7 +22,7 @@ const UiReducer = (state: InitialState, action: Action) => {
       return { ...state, isWritingReview: !state.isWritingReview };
     //modal
     case "OPEN_MODAL":
-      return { ...state, isModal: true };
+      return { ...state, isModal: true, productId: action.payload };
     case "CLOSE_MODAL":
       return { ...state, isModal: false };
     default:
@@ -49,9 +50,12 @@ export const UiProvider = ({ children }: any) => {
     dispatch({ type: "TOGGLE_WRITING_REVIEW" });
   }, [dispatch]);
   //open product quickview modal
-  const openProductModal = useCallback(() => {
-    dispatch({ type: "OPEN_MODAL" });
-  }, [dispatch]);
+  const openProductModal = useCallback(
+    (id: string) => {
+      dispatch({ type: "OPEN_MODAL", payload: id });
+    },
+    [dispatch]
+  );
   const closeModal = useCallback(() => {
     dispatch({ type: "CLOSE_MODAL" });
   }, [dispatch]);

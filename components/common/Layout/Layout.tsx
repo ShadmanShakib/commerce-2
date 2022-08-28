@@ -6,7 +6,7 @@ function Layout({ children }: { children: React.ReactNode }) {
     <main>
       <Navbar />
       <CartView />
-      <ModalView id="3" />
+      <ModalView id="2" />
       {children}
       <Footer />
     </main>

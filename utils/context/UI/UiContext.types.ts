@@ -4,6 +4,7 @@ export interface InitialState {
   isWritingReview: boolean;
   prodDescriptionTab: "description" | "reviews" | "returns";
   isModal: boolean;
+  productId: string | null;
 }
 
 export type Action =
@@ -18,5 +19,9 @@ export type Action =
       type: "TOGGLE_WRITING_REVIEW";
     }
   | {
-      type: "OPEN_MODAL" | "CLOSE_MODAL";
+      type: "OPEN_MODAL";
+      payload: string;
+    }
+  | {
+      type: "CLOSE_MODAL";
     };
